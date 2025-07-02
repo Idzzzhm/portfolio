@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Idzham | Web Designer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .project-card a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .skills, .contact {
+      margin-top: 2rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skills-list span {
+      background: #eee;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      background-color: #f1f1f1;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muhammad Idzham Mazlan</h1>
+    <p>Web Designer | Front-End Developer | UI/UX Enthusiast</p>
+  </header>
+
+  <div class="container">
+    <section class="about">
+      <h2 class="section-title">About Me</h2>
+      <p>I’m a passionate Web Designer and Front-End Developer with experience in building client-focused websites using WordPress, custom PHP systems, and clean responsive design. I prioritize functionality, speed, and user-friendly interfaces.</p>
+    </section>
+
+    <section class="portfolio">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>HomestayRawang.my</h3>
+          <p>A responsive booking site for a homestay in Rawang.</p>
+          <a href="https://homestayrawang.my" target="_blank">Visit Site →</a>
+        </div>
+        <div class="project-card">
+          <h3>CowayPenang.my</h3>
+          <p>Marketing site for Coway agent with product catalog and inquiries.</p>
+          <a href="https://cowaypenang.my" target="_blank">Visit Site →</a>
+        </div>
+        <div class="project-card">
+          <h3>ToyotaKajang.my</h3>
+          <p>Showroom promo site for Toyota Kajang branch and sales contact.</p>
+          <a href="https://toyotakajang.my" target="_blank">Visit Site →</a>
+        </div>
+        <div class="project-card">
+          <h3>Inventory System</h3>
+          <p>Custom PHP dashboard for inventory tracking and stock alerts.</p>
+          <a href="https://inventory.pemajudigital.com" target="_blank">Visit Site →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
+        <span>MySQL</span>
+        <span>WordPress</span>
+        <span>Elementor</span>
+        <span>Figma</span>
+        <span>Responsive Design</span>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:idzham@example.com">idzham@example.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/60123456789" target="_blank">+60 12-345 6789</a></p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Muhammad Idzham Mazlan. All rights reserved.
+  </footer>
+</body>
+</html>
