@@ -6,6 +6,9 @@
   <title>Muhammad Idzham | Web Designer Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -14,13 +17,45 @@
       color: #333;
       line-height: 1.6;
     }
-    header {
-      background: #fff;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    nav {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header h1 {
+    nav h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      color: #0077cc;
+    }
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #fff;
+    }
+    header h2 {
       margin: 0;
       font-size: 2rem;
     }
@@ -78,21 +113,34 @@
       background-color: #f1f1f1;
       margin-top: 2rem;
     }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <h1>Idzham Portfolio</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <h1>Muhammad Idzham Mazlan</h1>
+    <h2>Muhammad Idzham Mazlan</h2>
     <p>Web Designer | Front-End Developer | UI/UX Enthusiast</p>
   </header>
 
   <div class="container">
-    <section class="about">
+    <section id="about">
       <h2 class="section-title">About Me</h2>
       <p>I’m a passionate Web Designer and Front-End Developer with experience in building client-focused websites using WordPress, custom PHP systems, and clean responsive design. I prioritize functionality, speed, and user-friendly interfaces.</p>
     </section>
 
-    <section class="portfolio">
+    <section id="projects">
       <h2 class="section-title">Projects</h2>
       <div class="projects">
         <div class="project-card">
@@ -118,7 +166,7 @@
       </div>
     </section>
 
-    <section class="skills">
+    <section id="skills" class="skills">
       <h2 class="section-title">Skills</h2>
       <div class="skills-list">
         <span>HTML5</span>
@@ -133,7 +181,7 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2 class="section-title">Contact</h2>
       <p>Email: <a href="mailto:idzham@example.com">idzham@example.com</a></p>
       <p>WhatsApp: <a href="https://wa.me/60123456789" target="_blank">+60 12-345 6789</a></p>
