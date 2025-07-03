@@ -1,195 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Idzham | Web Designer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background: #0f0f11;
+      color: #f5f5f5;
       line-height: 1.6;
     }
     nav {
-      background-color: #ffffff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
     nav h1 {
-      font-size: 1.2rem;
-      margin: 0;
-    }
+  display: none;
+}
     nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li {
-      display: inline;
-    }
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
     nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: 500;
+  transition: color 0.3s, background 0.3s, border-radius 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
     nav ul li a:hover {
-      color: #0077cc;
-    }
+  color: white;
+  background: rgba(99, 102, 241, 0.15);
+}
     header {
-      padding: 4rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
-      background: #fff;
+      padding: 6rem 2rem 4rem;
     }
     header h2 {
+      font-size: 2.75rem;
       margin: 0;
-      font-size: 2rem;
+      color: #f5f5f5;
     }
     header p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
+      font-size: 1.25rem;
+      color: #cfcfcf;
+      margin: 0.75rem 0 1.5rem;
+    }
+    .resume-download {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      background: #6366f1;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0, 119, 204, 0.2);
+    }
+    .resume-download:hover {
+      background: #4f46e5;
     }
     .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
     }
     .section-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #f5f5f5;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(14px);
+  padding: 0.5rem 2.5rem;
+  border-radius: 60px;
+  display: inline-block;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+.section-title:hover {
+  transform: scale(1.03);
+}
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
     .project-card {
-      background: #fff;
-      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+    .project-card img {
+      width: 100%;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
+      object-fit: cover;
     }
     .project-card h3 {
       margin-top: 0;
+      font-size: 1.3rem;
+      color: #f5f5f5;
     }
     .project-card a {
-      color: #0066cc;
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: #6366f1;
       text-decoration: none;
-    }
-    .skills, .contact {
-      margin-top: 2rem;
+      font-weight: 500;
     }
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 1rem;
     }
     .skills-list span {
-      background: #eee;
-      padding: 6px 12px;
-      border-radius: 20px;
+      background: #6366f1;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 30px;
       font-size: 0.9rem;
+      font-weight: 500;
     }
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      background-color: #f1f1f1;
-      margin-top: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #777;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    html {
-      scroll-behavior: smooth;
+    .floating-contact {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1001;
     }
-  </style>
+    .floating-contact button {
+      background: #6366f1;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .floating-contact a {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .project-card {
+        padding: 1rem;
+      }
+      header h2 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+    .glass-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1100px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  .slider {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .slider-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  .cert-list,
+  .lang-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem auto;
+    max-width: 800px;
+  }
+  .cert-list li,
+  .lang-list li {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .floating-contact button,
+  .floating-contact a {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: background 0.3s ease;
+  }
+  .floating-contact button:hover,
+  .floating-contact a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .floating-contact img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+  }
+  .contact-buttons a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+  }
+  .contact-buttons a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .contact-buttons img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+  }
+  .contact-buttons a,
+  .floating-contact a {
+    position: relative;
+  }
+  .contact-buttons a::after,
+  .floating-contact a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .contact-buttons a:hover::after,
+  .floating-contact a:hover::after {
+    opacity: 1;
+  }
+  .contact-text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.4s ease, opacity 0.4s ease;
+    display: inline-block;
+  }
+  .contact-buttons a:hover .contact-text {
+    opacity: 1;
+    max-width: 300px;
+    margin-left: 6px;
+  }
+  
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      padding: 0.5rem 1rem;
+      gap: 0.5rem;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .container,
+    .glass-section {
+      padding: 1rem;
+      margin: 1rem;
+    }
+    .projects {
+      grid-template-columns: 1fr;
+    }
+    header h2 {
+      font-size: 1.75rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      padding: 0.75rem 1.5rem;
+    }
+    .project-card {
+      padding: 1rem;
+    }
+    .skills-list {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .contact-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    .floating-contact {
+      right: 10px;
+      bottom: 10px;
+      gap: 6px;
+    }
+  }
+  .menu-toggle {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+  }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    nav ul.show {
+      display: flex;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
   <nav>
-    <h1>Idzham Portfolio</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <h1>Idzham Portfolio</h1>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <header>
-    <h2>Muhammad Idzham Mazlan</h2>
-    <p>Web Designer | Front-End Developer | UI/UX Enthusiast</p>
-  </header>
-
-  <div class="container">
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <p>I’m a passionate Web Designer and Front-End Developer with experience in building client-focused websites using WordPress, custom PHP systems, and clean responsive design. I prioritize functionality, speed, and user-friendly interfaces.</p>
-    </section>
-
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects">
-        <div class="project-card">
-          <h3>HomestayRawang.my</h3>
-          <p>A responsive booking site for a homestay in Rawang.</p>
-          <a href="https://homestayrawang.my" target="_blank">Visit Site →</a>
-        </div>
-        <div class="project-card">
-          <h3>CowayPenang.my</h3>
-          <p>Marketing site for Coway agent with product catalog and inquiries.</p>
-          <a href="https://cowaypenang.my" target="_blank">Visit Site →</a>
-        </div>
-        <div class="project-card">
-          <h3>ToyotaKajang.my</h3>
-          <p>Showroom promo site for Toyota Kajang branch and sales contact.</p>
-          <a href="https://toyotakajang.my" target="_blank">Visit Site →</a>
-        </div>
-        <div class="project-card">
-          <h3>Inventory System</h3>
-          <p>Custom PHP dashboard for inventory tracking and stock alerts.</p>
-          <a href="https://inventory.pemajudigital.com" target="_blank">Visit Site →</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-list">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>JavaScript</span>
-        <span>PHP</span>
-        <span>MySQL</span>
-        <span>WordPress</span>
-        <span>Elementor</span>
-        <span>Figma</span>
-        <span>Responsive Design</span>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2 class="section-title">Contact</h2>
-      <p>Email: <a href="mailto:idzham@example.com">idzham@example.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/60123456789" target="_blank">+60 12-345 6789</a></p>
-    </section>
+<header>
+  <div class="swiper slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="img/slider1.jpg/1200x400?text=Welcome+to+My+Portfolio" alt="Slide 1" class="slider-img"></div>
+    <div class="swiper-slide"><img src="img/slider2.png/1200x400?text=Creative+Design+Solutions" alt="Slide 2" class="slider-img"></div>
+    <div class="swiper-slide"><img src="img/slider3.png/1200x400?text=Showcasing+My+Work" alt="Slide 3" class="slider-img"></div>
   </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+  <h2>Muhammad Idzham Mazlan</h2>
+  <p>Web Designer | Front-End Developer | UI/UX Enthusiast</p>
+  <a class="resume-download" href="resume.pdf" download>📄 Download Resume</a>
+</header>
 
-  <footer>
-    &copy; 2025 Muhammad Idzham Mazlan. All rights reserved.
-  </footer>
+<div class="container">
+  <div class="glass-section">
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I’m a passionate Web Designer and Front-End Developer with experience in WordPress, PHP systems, and responsive UI. I love building user-friendly and clean websites.</p>
+  </section>
+</div>
+
+  <div class="glass-section">
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="img/slider1.jpg/600x300?text=HomestayRawang" alt="HomestayRawang">
+        <h3>HomestayRawang.my</h3>
+        <p>A responsive booking site for a homestay in Rawang.</p>
+        <a href="https://homestayrawang.my" target="_blank">Visit Site →</a>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x300?text=CowayPenang" alt="CowayPenang">
+        <h3>CowayPenang.my</h3>
+        <p>Marketing site for Coway agent with product catalog and inquiries.</p>
+        <a href="https://cowaypenang.my" target="_blank">Visit Site →</a>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x300?text=ToyotaKajang" alt="ToyotaKajang">
+        <h3>ToyotaKajang.my</h3>
+        <p>Showroom promo site for Toyota Kajang branch and sales contact.</p>
+        <a href="https://toyotakajang.my" target="_blank">Visit Site →</a>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x300?text=Inventory+System" alt="Inventory System">
+        <h3>Inventory Management System</h3>
+        <p>Custom PHP-based inventory system with stock tracking, expiry alerts, and dashboard analytics. Built during internship.</p>
+        <a href="https://inventory.pemajudigital.com" target="_blank">Visit Site →</a>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x300?text=Lurvish+E-Commerce" alt="Lurvish E-Commerce">
+        <h3>Lurvish Fashion E-Commerce</h3>
+        <p>Developed an e-commerce platform with custom checkout and integrated email marketing to increase product visibility and sales.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x300?text=Client+Sites" alt="Client Sites">
+        <h3>30+ Client Websites</h3>
+        <p>Assisted in building and maintaining over 30 client websites using WordPress, HTML, and CSS across various industries (auto, finance, education).</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x300?text=Banana+Detection" alt="Banana Detection">
+        <h3>Banana Quality Detection (FYP)</h3>
+        <p>Final year project using Deep Learning to classify banana quality through image recognition. Focus on AI model training and mobile deployment.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <div class="glass-section">
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg" alt="HTML5" height="16"> HTML5</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" alt="CSS3" height="16"> CSS3</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/javascript.svg" alt="JavaScript" height="16"> JavaScript</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/php.svg" alt="PHP" height="16"> PHP</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mysql.svg" alt="MySQL" height="16"> MySQL</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wordpress.svg" alt="WordPress" height="16"> WordPress</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg" alt="Figma" height="16"> Figma</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobephotoshop.svg" alt="Photoshop" height="16"> Photoshop</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/google.svg" alt="SEO" height="16"> SEO</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlesearchconsole.svg" alt="Google Search Console" height="16"> Google Search Console</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/namecheap.svg" alt="Domain/Hosting" height="16"> Domain/Hosting</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/universalaccess.svg" alt="UI/UX Design" height="16"> UI/UX Design</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftaccess.svg" alt="Inventory Systems" height="16"> Inventory Systems</span>
+  <span><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/powerbi.svg" alt="Power BI" height="16"> Power BI</span>
+</div>
+  </section>
+</div>
+
+  <div class="glass-section">
+<section id="certifications">
+  <h2 class="section-title">Certifications & Courses</h2>
+  <ul class="cert-list">
+    <li><span>📜</span> Cybersecurity Basics – edX</li>
+    <li><span>☁️</span> Microsoft Azure – Microsoft Learn</li>
+    <li><span>🚀</span> K-Youth Khazanah – Career Development Program</li>
+  </ul>
+</section>
+</div>
+
+  <div class="glass-section">
+<section id="languages">
+  <h2 class="section-title">Languages</h2>
+  <ul class="lang-list">
+    <li><span>🇲🇾</span> Malay – Native</li>
+    <li><span>🇬🇧</span> English – B2</li>
+    <li><span>🇯🇵</span> Japanese – A2</li>
+  </ul>
+</section>
+</div>
+
+  <div class="glass-section">
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-buttons">
+  <a href="mailto:idzham2812@gmail.com" title="Email">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gmail.svg" alt="Email" width="20">
+    <span class="contact-text">idzham2812@gmail.com</span>
+  </a>
+  <a href="https://wa.me/60136660802" target="_blank" title="WhatsApp">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg" alt="WhatsApp" width="20">
+    <span class="contact-text">013-6660802</span>
+  </a>
+  <a href="https://linkedin.com/in/idzham" target="_blank" title="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg" alt="LinkedIn" width="20">
+    <span class="contact-text">linkedin.com/in/idzham</span>
+  </a>
+  <a href="https://github.com/idzzzhm" target="_blank" title="GitHub">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub" width="20">
+    <span class="contact-text">github.com/idzham</span>
+  </a>
+</div>
+</section>
+</div>
+</div>
+
+<div class="floating-contact" id="contactButtons">
+  <a href="mailto:idzham@example.com" title="Email">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gmail.svg" alt="Email" width="20">
+  </a>
+  <a href="https://wa.me/60123456789" target="_blank" title="WhatsApp">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg" alt="WhatsApp" width="20">
+  </a>
+  <a href="https://linkedin.com/in/idzham" target="_blank" title="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg" alt="LinkedIn" width="20">
+  </a>
+  <a href="https://github.com/idzham" target="_blank" title="GitHub">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub" width="20">
+  </a>
+</div>
+
+<footer>
+  &copy; 2025 Muhammad Idzham Mazlan. All rights reserved.
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const navList = document.querySelector('nav ul');
+    navList.classList.toggle('show');
+  }
+</script>
 </body>
 </html>
+
